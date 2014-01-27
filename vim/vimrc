@@ -24,6 +24,10 @@ set nobackup
 " Automatically wrap lines at 100 characters.
 set textwidth=100
 
+" Load Vundle if present
+if filereadable($HOME . "/.vim/vundle.vim")
+    source $HOME/.vim/vundle.vim
+endif
 
 
 " ----- APPEARANCE -----
