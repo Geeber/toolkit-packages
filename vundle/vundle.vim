@@ -20,6 +20,7 @@ Bundle 'kchmck/vim-coffee-script'
 "Bundle 'myusuf3/numbers.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
+Bundle 'cakebaker/scss-syntax.vim'
 
 " Ledger
 Bundle 'ledger/vim-ledger'
