@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Finds code markers in the specified locations.
+#
+# Author:: Kevin Litwack
+
+fcm() {
+    for location in $@
+    do
+        echo "Showing all NOCHECKIN and SHIPBLOCK tags in $location:"
+        grep -rn "NOCHECKIN\|SHIPBLOCK" $location
+    done
+}
+
+fcm "$@"

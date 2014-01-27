@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Sums a single column of numeric data.
+#
+# Author:: Kevin Litwack
+
+sumcol() {
+    awk '{total = total + $1}END{print total}'
+}
+
+sumcol "$@"

@@ -1,0 +1,21 @@
+[user]
+name = Kevin Litwack
+email = kevin.litwack@gmail.com
+
+[core]
+pager = less
+editor = vim
+	excludesfile = /home/geeber/.gitignore_global
+
+[alias]
+co = checkout
+ci = commit
+st = status
+#la = log --pretty=\"format:%ad %h (%an): %s\" --date=short
+la = log --color --graph --date=short --pretty=\"format:%ad %Cred%h%C(bold yellow)%d%Creset %s %C(bold blue)<%an>%Creset %Cgreen(%cr)%Creset\"
+
+[color]
+branch = auto
+diff = auto
+interactive = auto
+status = auto

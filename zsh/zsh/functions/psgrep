@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Simple function which greps current process data, excluding the grep command
+# itself from the output. May cause issues if you're actually looking for a
+# grep process.
+#
+# Author:: Greg Look
+
+psgrep() {
+    ps aux | grep -P "$@" | grep -vP '\d\d grep'
+}
+
+psgrep "$@"

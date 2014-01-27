@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Simple function which performs basic math operations.
+#
+# Author:: Greg Look
+
+calc() {
+    awk "BEGIN { print $@ }"
+}
+
+alias calc='noglob calc'
+
+calc "$@"

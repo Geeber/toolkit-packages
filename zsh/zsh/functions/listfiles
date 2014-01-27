@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Recursively list all files under the current directory, sorted by size.
+#
+# Author:: Kevin Litwack
+
+listfiles() {
+    find . -type f -printf '%s\t%p\n' | sort -n
+}
+
+listfiles "$@"
