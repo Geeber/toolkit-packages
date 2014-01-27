@@ -1,0 +1,4 @@
+#!/bin/sh
+
+find . \( -name '*.java' -o -name '*.xml' \) -type f -print | xargs sed -i 's/\s\+$//'
+find . \( -name '*.java' -o -name '*.xml' \) -type f -print | xargs sed -i 's/\t/    /g'

@@ -1,0 +1,7 @@
+#!/usr/bin/ruby
+
+require 'json'
+
+filename = ARGV.shift
+obj = JSON.parse(File.read(filename))
+File.open(filename, 'w') { |f| f.write(JSON.pretty_generate(obj)) }
