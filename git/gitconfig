@@ -19,5 +19,6 @@ branch = auto
 diff = auto
 interactive = auto
 status = auto
+
 [push]
-	default = simple
+	default = upstream
