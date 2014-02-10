@@ -13,6 +13,7 @@ package 'cygwin',    :dotfiles => true, :when => ( File.directory? '/cygdrive' )
 
 # application settings
 package 'git',    :dotfiles => true, :default => true
+package 'gradle', :dotfiles => true, :when => ( File.directory? '~/gradle' )
 package 'tmux',   :dotfiles => true
 package 'vim',    :dotfiles => true, :default => true
 package 'vundle', :into => '.vim'
