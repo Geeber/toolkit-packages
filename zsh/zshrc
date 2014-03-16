@@ -10,11 +10,7 @@
 autoload -U colors && colors
 
 # command-line prompt
-if [[ $USER == "root" ]]; then
-    export PROMPT="%B%{$fg[red]%}%m %{$fg[blue]%}%c %#%{$reset_color%}%b "
-else
-    export PROMPT="%B%{$fg[green]%}%n%{$fg[blue]%}@%{$fg[red]%}%m %{$fg[blue]%}%c %#%{$reset_color%}%b "
-fi
+export PROMPT="%B%(!,,%{$fg[green]%}%n%{$fg[blue]%}@)%{$fg[red]%}%m %{$fg[blue]%}%c %(0?,,%{$fg[red]%}%(1?,,[%?] ))%#%{$reset_color%}%b "
 
 # show ISO 8601 time on right side
 #export RPROMPT="%{$fg[cyan]%}%D{%Y-%m-%d %H:%M:%S}%{$reset_color%}"
