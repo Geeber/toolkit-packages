@@ -1,0 +1,37 @@
+#!/bin/bash
+CURRENT_SESSION=${PWD##*/}
+
+# Do we have Rakefile in the directory?
+if [ ! -f Rakefile ]
+then
+  echo "Rakefile not found in current directory"
+  exit 1;
+fi
+
+# Start up the tmux session with specific name
+tmux new-session -d -s $CURRENT_SESSION
+
+# Window for running development server
+tmux rename-window server
+
+tmux new-window
+tmux rename-window console
+tmux send-keys 'rails console' 'C-m'
+
+tmux new-window
+tmux rename-window models
+tmux send-keys 'cd app/models' 'C-m'
+
+tmux new-window
+tmux rename-window views
+tmux send-keys 'cd app/views' 'C-m'
+
+tmux new-window
+tmux rename-window cont
+tmux send-keys 'cd app/controllers' 'C-m'
+
+# Select the first window
+tmux select-window -t 1
+
+# Attach the tmux session
+tmux attach -t $CURRENT_SESSION
