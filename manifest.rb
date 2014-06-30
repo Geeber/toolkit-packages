@@ -21,4 +21,5 @@ package 'vundle', :into => '.vim'
 # langauges
 package 'rbenv', :dotfiles => true, :when => ( File.directory?(ENV['HOME'] + '/.rbenv') )
 package 'java',  :into => 'util/java'
+package 'virtualenv', :dotfiles => true
 
