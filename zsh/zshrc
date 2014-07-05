@@ -154,11 +154,6 @@ typeset -U fpath
 # load additional configuration
 load_configs "$HOME/.zsh/rc.d"
 
-##### RBENV SETUP #####
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 ##### CLOJURE SETUP #####
 
 export PATH="$HOME/bin/lein:$PATH"
