@@ -27,4 +27,4 @@ function! SyntaxInfo()
     echo info
 endfunction
 
-map <F10> :call SyntaxInfo()<CR>
+nnoremap <leader>` :call SyntaxInfo()<CR>

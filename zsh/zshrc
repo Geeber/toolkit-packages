@@ -61,20 +61,26 @@ preexec() {
 
 
 
+##### TIMING #####
+
+# If a command takes more than 10 CPU seconds, automatically print the time it took.
+REPORTTIME=10
+
+# Format the output of the time command to be a little more human friendly.
+TIMEFMT=" Elapsed: %*E User: %U Kernel: %*S"
+
+
+
 ##### KEY BINDINGS #####
 
 # use vim-style key bindings
 bindkey -v
 
-# RHEL5 desktop
-bindkey '^[OH'    beginning-of-line
-bindkey '^[OF'    end-of-line
-
-# PuTTY
+# home/end (PuTTY/OS X)
 bindkey '^[[1~'   beginning-of-line
 bindkey '^[[4~'   end-of-line
 
-# MinTTY
+# home/end (MinTTY)
 bindkey '^[[H'    beginning-of-line
 bindkey '^[[F'    end-of-line
 
@@ -111,20 +117,19 @@ export PAGER='less'
 export EDITOR='vim'
 
 # common aliases
+alias u='cd ..'
+alias uu='cd ../..'
+alias uuu='cd ../../..'
+alias uuuu='cd ../../../..'
+alias uuuuu='cd ../../../../..'
 alias d='dirs -v'
 alias ls='ls --color=auto'
 alias ll='ls -lh --color=auto'
 alias la='ls -lhA --color=auto'
+alias bc='bc -lq'
 alias tmux='tmux -2'
-
-
-
-##### TIMING #####
-
-# If a command takes more than 10 CPU seconds, automatically print the time it took.
-REPORTTIME=10
-# Format the output of the time command to be a little more human friendly.
-TIMEFMT=" Elapsed: %*E User: %U Kernel: %*S"
+alias gd='git diff'
+alias gs='git status'
 
 
 

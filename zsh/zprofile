@@ -16,3 +16,6 @@ local bin_dir="$HOME/bin"
 
 # ensure path only contains unique entries
 typeset -U path
+
+# block loading of global RC file
+unsetopt global_rcs

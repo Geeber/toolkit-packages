@@ -7,19 +7,26 @@ package 'tools',    :default => true
 package 'keychain', :dotfiles => ['zsh']
 
 # shell configuration
-package 'input',     :dotfiles => true, :default => true
-package 'zsh',       :dotfiles => true, :when => ( File.basename(ENV['SHELL']) == 'zsh'  )
-package 'cygwin',    :dotfiles => true, :when => ( File.directory? '/cygdrive' )
+package 'input',     :default => true,              :dotfiles => true
+package 'bash',      :when => shell?('bash'),       :dotfiles => true
+package 'zsh',       :when => shell?('zsh'),        :dotfiles => true
+package 'cygwin',    :when => file?('/Cygwin.bat'), :dotfiles => true
+package 'solarized', :dotfiles => ['vim', 'zsh']
 
 # application settings
-package 'git',    :dotfiles => true, :default => true
+package 'git',     :when => installed?('git'),  :dotfiles => true
 package 'gradle', :dotfiles => true, :when => ( File.directory? '~/gradle' )
-package 'tmux',   :dotfiles => true
-package 'vim',    :dotfiles => true, :default => true
-package 'vundle', :into => '.vim'
+package 'tmux',    :when => installed?('tmux'), :dotfiles => ['tmux.conf', 'zsh']
+package 'vim',     :when => installed?('vim'),  :dotfiles => true
+package 'vundle',  :into => '.vim'
+package 'synergy', :into => 'util/synergy'
 
-# langauges
-package 'rbenv', :dotfiles => true, :when => ( File.directory?(ENV['HOME'] + '/.rbenv') )
+# programming languages
 package 'java',  :into => 'util/java'
+package 'lein',  :when => installed?('lein'),           :dotfiles => true
+package 'rbenv', :when => file?(ENV['HOME'], '.rbenv'), :dotfiles => true
 package 'virtualenv', :dotfiles => true
 
+# misc packages
+package 'gentoo', :into => 'admin/gentoo'
+package 'gtd',    :dotfiles => ['vim']

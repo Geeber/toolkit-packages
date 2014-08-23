@@ -5,7 +5,7 @@
 # $ git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
 if [[ -s "$HOME/.rbenv" ]]; then
-unset RUBYOPT
+    unset RUBYOPT
     path=("$HOME/.rbenv/bin" $path)
     eval "$(rbenv init -)"
 fi
