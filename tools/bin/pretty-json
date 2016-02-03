@@ -1,7 +1,10 @@
 #!/usr/bin/ruby
 
 require 'json'
+require 'fileutils'
 
 filename = ARGV.shift
 obj = JSON.parse(File.read(filename))
-File.open(filename, 'w') { |f| f.write(JSON.pretty_generate(obj)) }
+temp_filename = "#{filename}-pretty-json.tmp"
+File.open(temp_filename, 'w') { |f| f.write(JSON.pretty_generate(obj)) }
+FileUtils.mv temp_filename, filename
