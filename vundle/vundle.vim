@@ -27,7 +27,7 @@ Bundle 'kchmck/vim-coffee-script'
 
 " Clojure
 Bundle 'guns/vim-clojure-static'
-Bundle 'amdt/vim-niji'
+Bundle 'losingkeys/vim-niji'
 Bundle 'paredit.vim'
 
 " SLIME
