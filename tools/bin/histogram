@@ -91,7 +91,7 @@ $total = 0
 
 # process input
 while line = STDIN.gets
-  next unless line.strip! =~ /^[+-]?\d+\.?\d*$/
+  next unless line.strip! =~ /^[+-]?\d+\.?\d*[eE]?\d*$/
   $total += 1
 
   value = line.to_f
