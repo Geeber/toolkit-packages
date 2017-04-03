@@ -5,3 +5,10 @@
 .DS_Store
 .DS_Store?
 .Trashes
+
+# IDE files
+.idea
+*.iml
+*.swp
+
+.ruby-version
